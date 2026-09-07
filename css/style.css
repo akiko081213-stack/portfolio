@@ -1,0 +1,2497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+
+/* TOP画像部分 */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image:
+        url(../images/top.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.30);
+    z-index: 2;
+}
+
+/* タイトル */
+
+.hero-text {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    color: white;
+    text-align: center;
+    z-index: 3;
+}
+
+
+.hero-text h1 {
+    font-family: "Alex Brush", cursive;
+    font-size: 90px;
+    font-weight: 590;
+    letter-spacing: 1px;
+}
+
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.top-my-story {
+    font-family: "Times New Roman", serif;
+    font-size: 30px;
+    font-style: italic;
+    color: white;
+    margin-top: 37px;
+    letter-spacing: 2px;
+}
+
+
+.concept {
+    margin-top: 35px;
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    color: white !important;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+    z-index: 3;
+    letter-spacing: 2px;
+}
+
+.contact span {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .3s;
+    z-index: 3;
+}
+
+.contact:hover {
+    color: white !important;
+}
+
+.contact:hover span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navigation {
+    position: absolute;
+    right: 12%;
+    bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: right;
+    z-index: 3;
+}
+
+.navigation a {
+    position: relative;
+    left: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: navFadeUp 1s ease-out forwards;
+    transition: color .4s ease, left .4s ease;
+}
+
+.navigation a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.navigation a:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.navigation a:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.navigation a:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+/* 下からふわっと表示 */
+@keyframes navFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* hoverしたとき少し左へ */
+.navigation a:hover {
+    left: -8px;
+}
+
+/* hover色 */
+
+.about:hover {
+    color: #b69504;
+    transform: translateX(-8px);
+}
+
+
+.favorites:hover {
+    color: #ee398d;
+    transform: translateX(-8px);
+}
+
+
+.dream:hover {
+    color: #a538e4;
+    transform: translateX(-8px);
+}
+
+
+.message:hover {
+    color: #25abf8;
+    transform: translateX(-8px);
+}
+
+/* =========================
+   スマホ表示
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    /* TOP画像 */
+    .hero {
+        height: 100vh;
+        min-height: 600px;
+        background-position: center center;
+    }
+
+    /* タイトル */
+    .hero-text {
+        top: 25%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 55px;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        margin-top: 10px;
+    }
+
+    .top-my-story {
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+    .concept {
+        margin-top: 25px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+
+
+    /* ナビゲーション */
+    .navigation {
+        right: 0;
+        left: 0;
+        bottom: 16%;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    /* スマホではhoverの横移動をなくす */
+    .navigation a:hover {
+        left: 0;
+        transform: none;
+    }
+
+
+    /* CONTACT */
+    .contact {
+        right: 20px;
+        bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    /* スマホではhoverがないので Let's talk. を最初から表示 */
+    .contact span {
+        opacity: 1;
+        transform: none;
+        margin-top: 4px;
+    }
+
+}
+
+/* =========================
+   ABOUTページ
+========================= */
+
+.about-page {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/about.png);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.my-story {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left: 30px;
+    margin: 0;
+    color: white;
+    font-family: "Times New Roman", serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.about-page h2 {
+    color: rgb(143, 140, 140);
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 27px;
+}
+
+.about-page p.Chapter {
+    padding-top: 60px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.about-page p.about-text {
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.nav {
+    color: white;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 90px;
+    margin: 0;
+    text-align: center;
+}
+
+/* ナビのリンク */
+
+.nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 2.5em;
+    margin-bottom: 4px;
+}
+
+
+/* マウスを乗せても色を変えない */
+
+.nav a:hover {
+    color: #a8793f;
+    text-decoration: none;
+}
+
+.contact {
+    position: absolute;
+    z-index: 10;
+    right: 25px;
+    bottom: 15px;
+    margin: 0;
+    color: #a8793f;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+
+
+/* DREAMページ領域 */
+
+.dream-page {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/dream.png);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+.Chapter {
+    padding-top: 30px;
+     letter-spacing: 3px;
+}
+
+.dream-page h2 {
+    font-size: 27px;
+    color: #c162f8;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.Chapter,
+p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.dream-page li {
+    font-size: 17px;
+    padding-left: 150px;
+    padding-bottom: 7px;
+    color: #a538e4;
+}
+
+.about-dream {
+    width: 60%;
+    margin-left: 70px;
+}
+
+div.box-r,
+div.box-l {
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.3);
+    width: 70%;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+div.box-r {
+    margin-left: 150px;
+}
+
+dt {
+    font-size: large;
+    color: #a538e4;
+    line-height: 2em;
+    text-decoration: underline;
+}
+
+dd {
+    font-size: small;
+}
+
+.nav {
+    color: white;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 90px;
+    margin: 0;
+    text-align: center;
+}
+
+.nav a {
+    .nav a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 2.5em;
+        margin-bottom: 4px;
+    }
+
+    .nav a:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* FAVORITESページ領域 */
+
+.favorites-page {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-image: url(../images/favorites.png);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+.favorites-page h2 {
+    color: rgb(245, 101, 168);
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 27px;
+}
+
+.chapter {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* ==============================
+   カテゴリー全体
+============================== */
+
+.favorites-content {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* ==============================
+   4つのカード
+============================== */
+
+.favorite-card {
+    min-height: 440px;
+    padding: 55px 25px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+
+    /* 半透明のボックス */
+    background: rgba(255, 255, 255, 0.3);
+
+    /* 白い枠線 */
+    border: 2px solid rgba(255, 255, 255, 0.65);
+
+    /* 角丸 */
+    border-radius: 28px;
+
+    backdrop-filter: blur(2px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.23);
+}
+
+
+/* ==============================
+   アイコン
+============================== */
+
+.favorite-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.favorite-icon1 img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    display: block;
+}
+
+.favorite-icon img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ==============================
+   アイコン下の線
+============================== */
+
+.favorite-line {
+    width: 85px;
+    height: 1px;
+    background: rgba(26, 25, 25, 0.75);
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   カードタイトル
+============================== */
+
+.favorite-card h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+
+/* ==============================
+   カード説明
+============================== */
+
+.favorite-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: black;
+}
+
+
+/* ==============================
+   AND MORE
+============================== */
+
+.favorite-more {
+    grid-column: 1 / -1;
+    min-height: 140px;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.14);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 28px;
+    backdrop-filter: blur(2px);
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.favorite-more:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* ==============================
+   AND MORE アイコン
+============================== */
+
+.more-icon {
+    font-size: 52px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.more-icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ==============================
+   AND MORE テキスト
+============================== */
+
+.favorite-more-text {
+    text-align: center;
+}
+
+.favorite-more-text .favorite-line {
+    margin: 0 auto 16px;
+}
+
+.favorite-more h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.favorite-more p {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+
+.contact-link {
+    position: absolute;
+
+    right: 45px;
+    bottom: 32px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 18px;
+    letter-spacing: 3px;
+
+    transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.6;
+}
+
+
+/* ==============================
+   スマートフォン対応
+============================== */
+
+@media (max-width: 1000px) {
+
+    .favorites-page {
+        padding: 30px 6%;
+    }
+
+    .favorites-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .favorite-more {
+        grid-column: 1 / -1;
+    }
+
+    .side-nav {
+        right: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .favorites-page {
+        padding: 25px 20px 100px;
+    }
+}
+
+.page-header {
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
+
+/* =========================
+   FAVORITES / MOVIE
+========================= */
+
+.movie-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 0 140px;
+    background: #fff;
+}
+
+
+/* MOVIEタイトル */
+
+.movie-section .section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.movie-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.movie-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+
+/* 最初のコメント */
+
+.movie-section .section-intro {
+    margin: 0 auto 70px;
+    text-align: center;
+    line-height: 2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+
+/* 3作品を横並び */
+
+.movie-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    width: 100%;
+}
+
+
+/* 1作品 */
+
+.movie-item {
+    flex: 1;
+    text-align: center;
+}
+
+
+/* 映画画像 */
+
+.movie-image {
+    width: 100%;
+    height: 330px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* 映画タイトル */
+
+.movie-item h3 {
+    margin: 0 0 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+
+/* 映画コメント */
+
+.movie-comment {
+    margin: 0 auto;
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: #444;
+    text-align: left;
+}
+
+
+/* =========================
+   ページ内スクロール
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.animation-section {
+    padding: 100px 8%;
+}
+
+.animation-section .section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.animation-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.animation-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.animation-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+}
+
+/* Animation 画像 */
+.animation-image {
+    width: 330px;
+    height: 460px;
+    flex-shrink: 0;
+}
+
+.animation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Animation 文章 */
+.animation-text {
+    max-width: 430px;
+}
+
+.animation-text h3 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.animation-comment {
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   TV SERIES
+========================= */
+
+.tv-section {
+    padding: 100px 8%;
+}
+
+.tv-section .section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.tv-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.tv-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.tv-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+}
+
+/* TV Series 画像 */
+.tv-image {
+    width: 330px;
+    height: 460px;
+    flex-shrink: 0;
+}
+
+.tv-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* TV Series 文章 */
+.tv-text {
+    max-width: 430px;
+}
+
+.tv-text h3 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.tv-comment {
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+}
+
+.animation-comment,
+.tv-comment {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #222 !important;
+    font-size: 15px !important;
+    line-height: 2.2 !important;
+    text-align: left;
+}
+
+/* =========================
+   CAT
+========================= */
+
+.cat-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 0 160px;
+    background: #fff;
+    color: #333;
+}
+
+
+/* =========================
+   CAT タイトル
+========================= */
+
+.cat-section .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cat-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.cat-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.cat-intro {
+    max-width: 700px;
+    margin: 0 auto 120px;
+    text-align: center;
+}
+
+.cat-intro p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #444 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+/* =========================
+   文章＋画像
+========================= */
+
+.cat-story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 150px;
+}
+
+.cat-story.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* =========================
+   CAT 文章
+========================= */
+
+.cat-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.cat-text h3 {
+    margin: 0 0 30px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.cat-text p {
+    margin: 0 0 25px;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 0.8px;
+    color: #444;
+}
+
+
+/* =========================
+   CAT 画像
+========================= */
+
+.cat-image {
+    width: 430px;
+    flex-shrink: 0;
+}
+
+.cat-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   日常の思い出
+========================= */
+
+.cat-memory {
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.cat-memory>h3 {
+    margin: 0 0 70px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.cat-memory-item {
+    margin-bottom: 100px;
+}
+
+.cat-memory-item:last-child {
+    margin-bottom: 0;
+}
+
+.cat-memory-item>p {
+    margin: 0 0 30px;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.cat-memory-item .cat-image {
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   エピソード
+========================= */
+
+.cat-episodes {
+    max-width: 750px;
+    margin: 0 auto 130px;
+}
+
+.cat-episodes h3 {
+    margin: 0 0 40px;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.cat-episodes p {
+    margin: 0 0 25px;
+    font-size: 15px;
+    line-height: 2.3;
+    letter-spacing: 0.8px;
+    color: #444;
+}
+
+
+/* =========================
+   その後のみいちゃん
+========================= */
+
+.cat-final-story {
+    max-width: 750px;
+    margin: 0 auto 130px;
+    text-align: center;
+}
+
+.cat-final-story p {
+    margin: 0 0 30px;
+    font-size: 16px;
+    line-height: 2.3;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+
+/* =========================
+   最後のメッセージ
+========================= */
+
+.cat-message {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 70px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(245, 90, 157, 0.35);
+    border-bottom: 1px solid rgba(245, 90, 157, 0.35);
+}
+
+.cat-message h3 {
+    margin: 0 0 40px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #f05a9d;
+}
+
+.cat-message p {
+    margin: 0 0 25px;
+    font-size: 16px;
+    line-height: 2.3;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+.cat-message p:last-child {
+    margin-bottom: 0;
+    font-size: 19px;
+    color: #333;
+}
+
+/* =========================
+   NICE PLACE
+========================= */
+
+.nice-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 0 160px;
+    background: #fff;
+    color: #333;
+}
+
+/* =========================
+   NICE PLACE タイトル
+========================= */
+
+.nice-section .section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.nice-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.nice-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.nice-intro {
+    max-width: 750px;
+    margin: 0 auto 120px;
+    text-align: center;
+}
+
+.nice-intro p {
+    margin: 0 0 30px;
+    font-size: 15px;
+    line-height: 2.3;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+.nice-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   コース全体
+========================= */
+
+.walk-course {
+    margin-bottom: 150px;
+}
+
+.walk-course h3,
+.favorite-view h3,
+.other-favorites h3,
+.osaka-trip h3 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.course-intro,
+.trip-intro {
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+/* =========================
+   写真
+========================= */
+
+/* =========================
+   その他のお気に入り写真
+   横並び
+========================= */
+
+.other-favorites {
+    margin-bottom: 150px;
+}
+
+.other-favorites h3 {
+    margin-bottom: 50px;
+}
+
+.other-favorites .photo-item {
+    width: calc((100% - 90px) / 4);
+    margin: 0;
+    text-align: center;
+}
+
+.other-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.other-favorites h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.other-favorites .photo-item img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    display: block;
+}
+
+.other-favorites .photo-comment {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.nice-section .photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* =========================
+   写真コメント
+========================= */
+
+.nice-section .photo-comment {
+    margin: 20px 0 0;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.8px;
+    color: #444;
+}
+
+/* =========================
+   海沿いコース
+========================= */
+
+.seaside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.seaside h3,
+.seaside .course-intro {
+    width: 100%;
+}
+
+.seaside h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.seaside .course-intro {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.seaside .photo-item {
+    width: calc((100% - 90px) / 4);
+    margin: 0;
+    text-align: center;
+}
+
+.seaside .photo-item img {
+    width: 100%;
+    height: 240x;
+    object-fit: contain;
+    display: block;
+}
+
+.seaside .photo-comment {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   川沿いコース
+========================= */
+
+.riverside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3px;
+}
+
+.riverside h3,
+.riverside .course-intro {
+    width: 100%;
+}
+
+.riverside h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.riverside .course-intro {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.riverside .photo-item {
+    width: calc((100% - 90px) / 4);
+    margin: 0;
+    text-align: center;
+}
+
+.riverside .photo-item img {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    display: block;
+}
+
+.riverside .photo-comment {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   My favorite view
+========================= */
+
+.favorite-view {
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.favorite-view>p {
+    margin: 0 0 45px;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+.favorite-view-photo {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.favorite-view-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.other-favorites {
+    margin-bottom: 150px;
+}
+
+/* =========================
+   大阪一人旅
+========================= */
+
+.osaka-trip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3px;
+    margin-bottom: 50px;
+}
+
+.osaka-trip h3,
+.osaka-trip .trip-intro {
+    width: 100%;
+}
+
+.osaka-trip h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.osaka-trip .trip-intro {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.osaka-trip .photo-item {
+    width: calc((100% - 90px) / 4);
+    margin: 0;
+    text-align: center;
+}
+
+.osaka-trip .photo-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+}
+
+.osaka-trip .photo-comment {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   NOVEL
+========================= */
+
+.novel-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 0 160px;
+    background: #fff;
+    color: #333;
+}
+
+/* =========================
+   NOVEL タイトル
+========================= */
+
+.novel-section>.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.novel-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.novel-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   NOVEL INTRO
+========================= */
+
+.novel-intro {
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.novel-intro p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+/* =========================
+   NOVEL 3作品
+========================= */
+
+.novel-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+    width: 100%;
+}
+
+.novel-item {
+    flex: 1;
+    text-align: center;
+}
+
+/* =========================
+   NOVEL 画像
+========================= */
+
+.novel-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 25px;
+}
+
+.novel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
+   NOVEL タイトル
+========================= */
+
+.novel-item h3 {
+    margin: 0 0 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+/* =========================
+   NOVEL コメント
+========================= */
+
+.novel-comment {
+    margin: 0 auto;
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: #444;
+    text-align: left;
+}
+
+
+/* =========================
+   COMIC
+========================= */
+
+.comic-section {
+    margin-top: 170px;
+}
+
+/* =========================
+   COMIC タイトル
+========================= */
+
+.comic-section .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.comic-section .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.comic-section .section-title h2 {
+    margin: 0;
+    color: #f05a9d;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   COMIC INTRO
+========================= */
+
+.comic-intro {
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.comic-intro p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #444;
+}
+
+/* =========================
+   COMIC 作品
+========================= */
+
+/* =========================
+   COMIC 作品
+========================= */
+
+.comic-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* =========================
+   COMIC 画像
+========================= */
+
+.comic-image {
+    width: 420px;
+    flex-shrink: 0;
+}
+
+.comic-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================
+   COMIC 文章
+========================= */
+
+.comic-text {
+    width: 400px;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Comicタイトル */
+
+.comic-text h3 {
+    margin: 0 0 25px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+    text-align: center;
+}
+
+/* Comicコメント */
+
+.comic-text .comic-comment {
+    margin: 0;
+    font-size: 15px;
+    line-height: 2.2;
+    letter-spacing: 0.8px;
+    color: #444;
+    text-align: left;
+}
+
+.comic-section .comic-text h3 {
+    text-align: center !important;
+}
+
+/* =========================
+   ↑ TOP 固定表示
+========================= */
+
+.back-to-top {
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+
+    width: 130px;
+    padding: 13px 0;
+
+    background: #f05a9d;
+    color: #ffffff;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    border-radius: 30px;
+
+    z-index: 1000;
+
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #e54891;
+    transform: translateX(-50%) translateY(-3px);
+}
+
+/* =========================
+   スマートフォン対応
+========================= */
+
+@media (max-width: 800px) {
+
+    .novel-section {
+        width: 90%;
+        padding: 90px 0 120px;
+    }
+
+    .novel-list {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .novel-image {
+        height: 320px;
+    }
+
+    .novel-comment {
+        max-width: 500px;
+    }
+
+    .comic-section {
+        margin-top: 120px;
+    }
+
+    .comic-item {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .comic-image {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .comic-text {
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .comic-comment {
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   AND MORE
+========================= */
+
+.and-more-section {
+    width: 100%;
+    margin-top: 120px;
+    padding: 0 0 180px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   AND MORE タイトル
+========================= */
+
+.and-more-section .section-title {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 60px;
+}
+
+.and-more-section .section-title .section-number {
+    margin: 0 0 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #333;
+    text-align: center;
+}
+
+.and-more-section .section-title h2 {
+    margin: 0 auto;
+    padding: 0;
+
+    color: #f05a9d !important;
+
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    text-align: center !important;
+}
+
+
+/* =========================
+   大きなピンクの円
+========================= */
+
+.and-more-list {
+    width: 1200px;
+    height: 1200px;
+
+    max-width: 94vw;
+    max-height: 94vw;
+
+    margin: 0 auto;
+
+    padding: 180px 150px;
+
+    background: #f05a9d;
+
+    border-radius: 50%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/* =========================
+   導入文
+========================= */
+
+.and-more-intro {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    font-size: 16px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+
+    color: #444;
+}
+
+/* =========================
+   10個の文章
+========================= */
+
+.and-more-list p:not(.and-more-intro) {
+    width: 82%;
+
+    margin: 0 0 30px;
+
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================
+   左右交互に配置
+========================= */
+
+/* 左 */
+.and-more-list p:nth-child(2),
+.and-more-list p:nth-child(4),
+.and-more-list p:nth-child(6),
+.and-more-list p:nth-child(8),
+.and-more-list p:nth-child(10) {
+    align-self: flex-start;
+    text-align: left;
+}
+
+
+/* 右 */
+.and-more-list p:nth-child(3),
+.and-more-list p:nth-child(5),
+.and-more-list p:nth-child(7),
+.and-more-list p:nth-child(9),
+.and-more-list p:nth-child(11) {
+    align-self: flex-end;
+    text-align: right;
+}
+
+
+/* 最後の文章 */
+.and-more-list p:last-child {
+    margin-bottom: 0;
+}
+
+/* AND MORE 最後の文章を少し右へ */
+.and-more-list p:last-child {
+    transform: translateX(70px);
+}
+
+/* =========================
+   スマートフォン
+========================= */
+
+@media (max-width: 800px) {
+
+    .and-more-section {
+        margin-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    .and-more-section .section-title {
+        margin-bottom: 40px;
+    }
+
+    .and-more-section .section-title h2 {
+        font-size: 26px;
+    }
+
+    .and-more-list {
+        width: 94vw;
+        height: 94vw;
+
+        min-height: 850px;
+        max-height: none;
+
+        padding: 100px 50px;
+
+        border-radius: 50%;
+    }
+
+.and-more-intro {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+    .and-more-list p:not(.and-more-intro) {
+        width: 88%;
+        font-size: 11px;
+        line-height: 1.7;
+        margin-bottom: 13px;
+    }
+}
+
+/* =========================
+   MESSAGEページ
+========================= */
+
+.message-page {
+    min-height: 100vh;
+    padding: 40px 8% 100px;
+    box-sizing: border-box;
+    background-image: url(../images/message.png);
+    background-repeat: no-repeat;
+}
+
+/* Chapter 04 */
+.message-page .Chapter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+/* MESSAGE */
+.message-page h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: #25abf8;
+}
+
+/* ー 今 思うこと ー */
+.message-page > p:not(.my-story):not(.Chapter) {
+    text-align: center;
+    margin: 15px 0 50px;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   文章
+========================= */
+
+.message-text {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 2.2;
+    letter-spacing: 2px;
+}
+
+/* 各段落 */
+.message-text > p {
+    margin: 0 0 38px;
+    font-size: 12px;
+}
+
+/* 最初の段落 */
+.message-text > p:first-child {
+    margin-bottom: 55px;
+}
+
+
+/* =========================
+   最後の感謝
+========================= */
+
+.message-text .message-thanks {
+    margin-top: 65px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   Thank you
+========================= */
+
+.message-text .thank-you {
+    margin-top: 35px;
+    text-align: center;
+    font-family: serif;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 5px;
+    opacity: 0.8;
+}
+
+.message-title {
+    position: relative;
+    top: -50px;
+}
+
+/* =========================
+   CONTACTページ
+========================= */
+
+.contact-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #e8e3dc;
+    color: #333;
+    position: relative;
+    padding: 60px 8% 100px;
+}
+
+
+/* =========================
+   My Story
+========================= */
+
+.contact-page .my-story {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    margin: 0;
+    color: #555;
+    font-family: "Times New Roman", serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+/* =========================
+   ナビゲーション
+========================= */
+
+.contact-nav {
+    position: absolute;
+    top: 45px;
+    right: 70px;
+    display: flex;
+    gap: 30px;
+}
+
+.contact-nav a {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   CONTACT メイン
+========================= */
+
+.contact-content {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+
+/* CONTACT */
+
+.contact-label {
+    margin-bottom: 15px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #777;
+}
+
+
+/* Let's talk. */
+
+.contact-content h1 {
+    margin: 0 0 25px;
+    font-family: "Times New Roman", serif;
+    font-size: 64px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+
+/* 質問 */
+
+.contact-question {
+    margin-bottom: 30px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+
+/* 説明 */
+
+.contact-intro {
+    margin-bottom: 65px;
+    font-size: 14px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    color: #555;
+}
+
+
+/* =========================
+   フォーム
+========================= */
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 各入力項目 */
+
+.form-group {
+    margin-bottom: 35px;
+}
+
+
+/* ラベル */
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #555;
+}
+
+
+/* 名前 */
+
+.form-group input,
+.form-group textarea {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #999;
+    background: transparent;
+    padding: 12px 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+
+/* メッセージ */
+
+.form-group textarea {
+    height: 250px;
+    resize: vertical;
+    border: 1px solid #999;
+    padding: 15px;
+}
+
+
+/* プレースホルダー */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+
+/* フォーカス */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #555;
+}
+
+
+/* =========================
+   SENDボタン
+========================= */
+
+.contact-form button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 12px 35px;
+    border: 1px solid #555;
+    border-radius: 30px;
+    background: transparent;
+    color: #333;
+    font-size: 13px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.contact-form button:hover {
+    background: #555;
+    color: #fff;
+}
+
+/* =========================
+   CONTACT スマホ対応
+========================= */
+
+@media (max-width: 768px) {
+
+    /* ページ全体 */
+    .contact-page {
+        min-height: 100vh;
+        padding: 30px 20px 70px;
+        overflow-x: hidden;
+    }
+
+    /* My Story */
+    .contact-page .my-story {
+        position: static;
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    /* ナビゲーション */
+    .contact-nav {
+        position: static;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        margin-bottom: 50px;
+    }
+
+    .contact-nav a {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    /* CONTACT メイン */
+    .contact-content {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    /* CONTACT */
+    .contact-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    /* Let's talk. */
+    .contact-content h1 {
+        font-size: 48px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    /* 質問 */
+    .contact-question {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+    }
+
+    /* 説明 */
+    .contact-intro {
+        font-size: 13px;
+        line-height: 2;
+        letter-spacing: 0.5px;
+        margin-bottom: 50px;
+    }
+
+    /* フォーム */
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 各入力項目 */
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    /* NAME */
+    .form-group input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    /* MESSAGE */
+    .form-group textarea {
+        width: 100%;
+        height: 220px;
+        font-size: 14px;
+    }
+
+    /* ラベル */
+    .form-group label {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+    }
+
+    /* SEND */
+    .contact-form button {
+        margin-top: 10px;
+        padding: 11px 30px;
+        font-size: 12px;
+    }
+}

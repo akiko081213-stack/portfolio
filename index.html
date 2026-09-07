@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Makes Me</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOPページ -->
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-text">
+
+            <h1>What Makes Me</h1>
+
+            <p class="subtitle">
+                ー 私を構成しているもの ー</p>
+            <p class="top-my-story">My Story</p>
+            <p class="concept">
+                Who I Was, Who I Am, Who I Will Be</p>
+
+        </div>
+
+        <nav class="navigation">
+            <a href="about.html" class="about">ABOUT</a>
+            <a href="favorites.html" class="favorites">FAVORITES</a>
+            <a href="dream.html" class="dream">DREAM</a>
+            <a href="message.html" class="message">MESSAGE</a>
+        </nav>
+
+    </section>
+
+    <!-- CONTACT -->
+    <a href="contact.html" class="contact">
+        CONTACT →
+        <span>Let's talk.</span>
+    </a>
+
+    <script>
+
+        const targets = document.querySelectorAll('.fade-up');
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('show');
+
+                }
+
+            });
+
+        });
+
+        targets.forEach(target => {
+
+            observer.observe(target);
+
+        });
+
+    </script>
+</body>
+
+
+</html>
