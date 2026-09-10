@@ -311,7 +311,7 @@ body {
 }
 
 .about-page p.Chapter {
-    padding-top: 60px;
+    padding-top: 30px;
     padding-bottom: 5px;
     color: white;
 }
@@ -322,8 +322,14 @@ p {
 
 .about-page p.about-text {
     color: white;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.about-page p.about-text1 {
+    color: white;
     font-size: 15px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .nav {
@@ -384,7 +390,7 @@ p {
 
 .Chapter {
     padding-top: 30px;
-     letter-spacing: 3px;
+    letter-spacing: 3px;
 }
 
 .dream-page h2 {
@@ -398,13 +404,6 @@ p {
 p {
     font-size: 15px;
     text-align: center;
-}
-
-.dream-page li {
-    font-size: 17px;
-    padding-left: 150px;
-    padding-bottom: 7px;
-    color: #a538e4;
 }
 
 .about-dream {
@@ -447,7 +446,6 @@ dd {
 }
 
 .nav a {
-    .nav a {
         display: block;
         color: white;
         text-decoration: none;
@@ -461,7 +459,7 @@ dd {
         color: white;
         text-decoration: none;
     }
-}
+
 
 /* FAVORITESページ領域 */
 
@@ -1832,7 +1830,7 @@ html {
     z-index: 1000;
 
     transition: background 0.3s ease,
-                transform 0.3s ease;
+        transform 0.3s ease;
 }
 
 .back-to-top:hover {
@@ -2064,11 +2062,11 @@ html {
         border-radius: 50%;
     }
 
-.and-more-intro {
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 50px;
-}
+    .and-more-intro {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 50px;
+    }
 
     .and-more-list p:not(.and-more-intro) {
         width: 88%;
@@ -2110,7 +2108,7 @@ html {
 }
 
 /* ー 今 思うこと ー */
-.message-page > p:not(.my-story):not(.Chapter) {
+.message-page>p:not(.my-story):not(.Chapter) {
     text-align: center;
     margin: 15px 0 50px;
     font-size: 15px;
@@ -2131,13 +2129,13 @@ html {
 }
 
 /* 各段落 */
-.message-text > p {
+.message-text>p {
     margin: 0 0 38px;
     font-size: 12px;
 }
 
 /* 最初の段落 */
-.message-text > p:first-child {
+.message-text>p:first-child {
     margin-bottom: 55px;
 }
 
@@ -2173,6 +2171,15 @@ html {
     position: relative;
     top: -50px;
 }
+
+/* MESSAGEページのCONTACT */
+.message-page+.contact {
+    position: fixed;
+    bottom: 20px;
+    top: auto;
+    right: 30px;
+}
+
 
 /* =========================
    CONTACTページ
